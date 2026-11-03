@@ -29,13 +29,16 @@ the service calls the NBP API and stores a copy of the rates.
 
 ## 3. Repository structure
 
-```
 /mobile    Expo mobile app
+
 /server    Express service and database migrations
+
 /docs      Diagrams, scenarios, report
+
 /tests     Network-failure test scripts
+
 README.md
-```
+
 
 ## 4. Setup
 
