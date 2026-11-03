@@ -8,7 +8,7 @@
                                                           +--HTTPS--> [NBP API]
 ```
 
-| Component | Owns / stores | Authoritative? |
+## Component | Owns / stores | Authoritative? 
 
 Database + service | users, wallet balances, transactions, idempotency keys | Yes (single source of truth) 
 NBP API - official exchange rates | Yes, for rates (external) 
