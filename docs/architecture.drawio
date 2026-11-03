@@ -1,0 +1,59 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="0PQnJHU7hpgosJ0jm1nw">
+    <mxGraphModel dx="1762" dy="972" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-22" edge="1" parent="1" source="jqVpJR7Lg5Iw4G7xZW3r-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;flowAnimation=1;" target="jqVpJR7Lg5Iw4G7xZW3r-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-24" connectable="0" parent="jqVpJR7Lg5Iw4G7xZW3r-22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="wireless, unstable" vertex="1">
+          <mxGeometry relative="1" x="0.05" as="geometry">
+            <mxPoint x="-3" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-30" edge="1" parent="1" source="jqVpJR7Lg5Iw4G7xZW3r-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0.57;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" target="jqVpJR7Lg5Iw4G7xZW3r-20">
+          <mxGeometry relative="1" x="-0.9211" as="geometry">
+            <Array as="points">
+              <mxPoint x="111" y="130" />
+              <mxPoint x="749.4" y="130" />
+            </Array>
+            <mxPoint x="751" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-31" connectable="0" parent="jqVpJR7Lg5Iw4G7xZW3r-30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="HTTPS (exchange rates)" vertex="1">
+          <mxGeometry relative="1" y="-1" as="geometry">
+            <mxPoint x="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-14" parent="1" style="whiteSpace=wrap;html=1;align=left;" value="&lt;b&gt;Mobile app (+ Local Cache)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="31" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-25" edge="1" parent="1" source="jqVpJR7Lg5Iw4G7xZW3r-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="jqVpJR7Lg5Iw4G7xZW3r-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-17" parent="1" style="whiteSpace=wrap;html=1;align=center;" value="&lt;b&gt;Web Service&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="291" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-19" parent="1" style="whiteSpace=wrap;html=1;align=center;" value="&lt;b&gt;SQLite Database&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="486" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-20" parent="1" style="whiteSpace=wrap;html=1;align=center;" value="&lt;b&gt;NBP API&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="681" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Cache only (rates, last seen balance and history). Not authoritative." vertex="1">
+          <mxGeometry height="30" width="170" x="21" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Authoritative data: users, wallets, transactions, request IDs" vertex="1">
+          <mxGeometry height="30" width="330" x="291" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Source of official exchange rates" vertex="1">
+          <mxGeometry height="30" width="130" x="676" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="jqVpJR7Lg5Iw4G7xZW3r-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 30px;&quot;&gt;Architecture and request path&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
