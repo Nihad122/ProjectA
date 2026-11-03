@@ -1,64 +1,89 @@
-# Lab 01: Architecture, scenarios and risks
+# Mobile Currency Exchange System
 
-## Architecture and data owners
+Course project (Project A), individual work.
+
+## 1. Topic and scope
+
+Mobile app, web service and database for a simulated currency exchange:
+registration and login, simulated account funding, current and historical
+exchange rates (National Bank of Poland API), buying and selling currencies,
+wallet balances and transaction history.
+
+Account funding is **virtual** and is labelled as a simulation in the UI.
+The project focuses on unreliable mobile connectivity: offline state, timeout,
+retry, local cache, synchronisation and duplicate-request protection.
+
+## 2. Technology choices
+
+| Layer | Choice |
+|---|---|
+| Mobile client | React Native (Expo), TypeScript |
+| Web service | Node.js, Express, TypeScript |
+| Database | SQLite (migrations in `server/migrations`) |
+| Mobile cache | AsyncStorage |
+| Authentication | E-mail + password (bcrypt), JWT |
+| External data | NBP Web API (Table A: history, Table C: bid/ask) |
+
+Communication path: mobile app -> HTTPS/JSON -> Express service -> SQLite;
+the service calls the NBP API and stores a copy of the rates.
+
+## 3. Repository structure
 
 ```
-[Mobile app + local cache] --wireless, unreliable--> [Web service] ---> [SQLite database]
-                                                          |
-                                                          +--HTTPS--> [NBP API]
+/mobile    Expo mobile app
+/server    Express service and database migrations
+/docs      Diagrams, scenarios, report
+/tests     Network-failure test scripts
+README.md
 ```
 
-## Component | Owns / stores | Authoritative? 
+## 4. Setup
 
-Database + service | users, wallet balances, transactions, idempotency keys | Yes (single source of truth) 
-NBP API - official exchange rates | Yes, for rates (external) 
-Mobile app - cached rates, last seen balances and history | No (cache only) 
+_To be completed in M2._
 
-Wireless segment: between the mobile app and the web service. Every
-data-changing request carries a unique request ID (`Idempotency-Key`), so a
-repeated request has only one effect.
+- Requirements: Node.js (version TBD), npm, Expo Go or an emulator
+- Install: `cd server && npm install`, `cd mobile && npm install`
 
-## User journeys
+## 5. Configuration
 
-### Normal journeys
+Copy `server/.env.example` to `server/.env` and fill in the values.
+No secrets are stored in the repository.
 
-**N1. Registration and first look at rates**
-1. User registers and logs in.
-2. User adds simulated funds (UI shows "SIMULATION").
-3. User opens the rates screen and sees current rates with their date.
+_Variables to be listed in M2 (e.g. `PORT`, `JWT_SECRET`, `NBP_BASE_URL`, `FAULT_MODE`)._
 
-**N2. Buying a currency**
-1. User selects USD and an amount, and confirms.
-2. Service validates the request, updates both wallet balances and records the transaction in one database transaction.
-3. App shows success only after the server confirms; wallet and history are updated.
+## 6. Running the components
 
-### Journeys interrupted by connectivity loss
+_To be completed in M2._
 
-**I1. Connection lost after submitting a buy request**
-1. User taps "Buy"; the request is sent with a request ID.
-2. The connection drops before the response arrives.
-3. App shows "Result uncertain" (not success, not failure).
-4. When possible, the app queries the status of that request ID.
-   Server committed: status found, balance already changed once.
-   Server never received it: not found, the same request can be safely resent with the same ID.
-5. No duplicate transaction is created.
+- Service: `cd server && npm run dev`
+- Mobile app: `cd mobile && npx expo start`
 
-**I2. App opened without a connection**
-1. App shows an offline banner.
-2. Cached rates are shown with "last updated: HH:MM".
-3. Buy, sell and fund buttons are disabled.
-4. When the connection returns, the app refreshes rates, wallet and history from the server.
+## 7. Network-failure demonstration
 
-## Initial risk list
+_To be completed in M3._
 
-| # | Risk | Mitigation |
+The service will support a `FAULT_MODE` setting to reproduce failures:
 
-R1 - Stale rate shown: user decides on old data | Show rate date and fetch time; mark data older than 15 min as stale; server determines the rate at execution time 
-R2 - Uncertain outcome: server committed but response lost | Request ID + status endpoint (`GET /trades/by-key/:key`) 
-R3 - Server never received the request | Safe resend with the same request ID 
-R4 - Duplicate request creates two operations | Server stores request ID and first response; repeated ID returns the stored result 
-R5 - Overlapping requests corrupt wallet balance | Database transaction, balance check inside the transaction 
-R6 - NBP API unavailable | Use last stored rate with timestamp; fake rate source for tests 
-R7 - JWT expires during an operation | Re-login flow; the request keeps the same ID when resent 
-R8 - Concurrent writes in SQLite | Short transactions, single writer connection 
-R9 - Cached data mistaken for current data | Freshness label on every cached screen 
+- `delay` - slow response
+- `drop_response` - request is processed, but the response is not sent
+  (server committed, response lost)
+- `drop_request` - request is not processed at all (server never received it)
+
+Scenarios and expected results are listed in `docs/scenarios.md`.
+
+## 8. External API and test-data assumptions
+
+- NBP publishes rates on business days only; on weekends and holidays the
+  last published rate is used and its effective date is shown to the user.
+- If the NBP API is unavailable, the service returns the last stored rate
+  with its timestamp. For tests, a local fake rate source replaces the NBP API.
+- Test users and balances are created by seed scripts (to be added).
+
+## 9. Milestones
+
+| Milestone | Git revision | Notes |
+|---|---|---|
+| M1 - Analysis and design | _commit hash_ | Design report, UML, ERD |
+| M2 - Working prototype | _commit hash_ | |
+| M3 - Network-resilient app | _commit hash_ | |
+| M4 - Final system | _commit hash_ | |
