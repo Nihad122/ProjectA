@@ -52,12 +52,12 @@ repeated request has only one effect.
 ## Initial risk list
 
 | # | Risk | Mitigation |
-| Risk1 - Stale rate shown; user decides on old data | Show rate date and fetch time; mark data older than 15 min as stale; server determines the rate at execution time |
-| Risk2 - Uncertain outcome: server committed but response lost | Request ID + status endpoint (`GET /trades/by-key/:key`) |
-| Risk3 - Server never received the request | Safe resend with the same request ID |
-| Risk4 - Duplicate request creates two operations | Server stores request ID and first response; repeated ID returns the stored result |
-| Risk5 - Overlapping requests corrupt wallet balance | Database transaction, balance check inside the transaction |
-| Risk6 - NBP API unavailable | Use last stored rate with timestamp; fake rate source for tests |
-| Risk7 - JWT expires during an operation | Re-login flow; the request keeps the same ID when resent |
-| Risk8 - Concurrent writes in SQLite | Short transactions, single writer connection |
-| Risk9 - Cached data mistaken for current data | Freshness label on every cached screen |
+| Risk1 | Stale rate shown; user decides on old data | Show rate date and fetch time; mark data older than 15 min as stale; server determines the rate at execution time |
+| Risk2 | Uncertain outcome: server committed but response lost | Request ID + status endpoint (`GET /trades/by-key/:key`) |
+| Risk3 | Server never received the request | Safe resend with the same request ID |
+| Risk4 | Duplicate request creates two operations | Server stores request ID and first response; repeated ID returns the stored result |
+| Risk5 | Overlapping requests corrupt wallet balance | Database transaction, balance check inside the transaction |
+| Risk6 | NBP API unavailable | Use last stored rate with timestamp; fake rate source for tests |
+| Risk7 | JWT expires during an operation | Re-login flow; the request keeps the same ID when resent |
+| Risk8 | Concurrent writes in SQLite | Short transactions, single writer connection |
+| Risk9 | Cached data mistaken for current data | Freshness label on every cached screen |
