@@ -3,9 +3,9 @@
 ## Architecture and data owners
 
 ```
-[Mobile app + local cache] --wireless, unreliable--> [Web service] ---> [SQLite database]
+(Mobile app + local cache) --wireless, unreliable--> (Web service) ---> (SQLite database)
                                                           |
-                                                          +--HTTPS--> [NBP API]
+                                                          -https-> (NBP Api)
 ```
 
 ## Component - Owns / stores - Authoritative?
