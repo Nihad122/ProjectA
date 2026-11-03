@@ -24,7 +24,7 @@ retry, local cache, synchronisation and duplicate-request protection.
 | Authentication | E-mail + password (bcrypt), JWT |
 | External data | NBP Web API (Table A: history, Table C: bid/ask) |
 
-Communication path: mobile app -> HTTPS/JSON -> Express service -> SQLite;
+Communication path: mobile app -> HTTPS/JSON -> Express service -> SQLite,
 the service calls the NBP API and stores a copy of the rates.
 
 ## 3. Repository structure
