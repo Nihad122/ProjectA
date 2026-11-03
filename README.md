@@ -86,7 +86,7 @@ Scenarios and expected results are listed in "docs/scenarios.md".
 
 | Milestone | Git revision | Notes |
 |---|---|---|
-| MileStone1 - Analysis and design | _commit hash_ | Design report, UML, ERD |
-| MileStone2 - Working prototype | _commit hash_ | |
-| MileStone3 - Network-resilient app | _commit hash_ | |
-| MileStone4 - Final system | _commit hash_ | |
+| MileStone1 - Analysis and design | commit hash | Design report, UML, ERD |
+| MileStone2 - Working prototype | commit hash | |
+| MileStone3 - Network-resilient app | commit hash | |
+| MileStone4 - Final system | commit hash | |
