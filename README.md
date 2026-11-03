@@ -1,6 +1,6 @@
 # Mobile Currency Exchange System
 
-Course project (Project A), individual work.
+Course project (Project A), individual work
 
 ## 1. Topic and scope
 
