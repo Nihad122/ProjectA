@@ -1,6 +1,6 @@
 # Implementation plan, possible extensions and sources
 
-## Well, I've checked the assignments on Moodle more than a little, I guess this is roughly what you want, I'll continue on this path too
+## Well, I've checked the assignments on Moodle more than a little, I guess this is roughly what you want, I'll continue on this path too  [Please tell me if I'm doing something wrong]
 
 ## Implementation plan
 
