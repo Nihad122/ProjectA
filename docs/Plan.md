@@ -1,5 +1,7 @@
 # Implementation plan, possible extensions and sources
 
+## Well, I've checked the assignments on Moodle more than a little, I guess this is roughly what you want, I'll continue on this path too
+
 ## Implementation plan
 
 Individual project: all responsibilities belong to one person (Nihad).
@@ -13,7 +15,7 @@ Weeks are teaching weeks; the plan is a proposal and may be adjusted.
 | Network resilience | 11-13 | Timeout, retry, offline state, cache with freshness, idempotency keys, status endpoint, `FAULT_MODE`, failure tests with evidence | M3: failure-test evidence table |
 | Final system | 14-15 | Bug fixing, final report, short user manual, presentation, live demo | M4: final package |
 
-Responsibilities (all: Nihad Nurmammadov): mobile app, web service, database, tests,
+Responsibilities (all: Nihad): mobile app, web service, database, tests,
 documentation, demonstration.
 
 ## Possible extensions
