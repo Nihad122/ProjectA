@@ -37,8 +37,8 @@ test ID (S1 ...) used later in the failure-test evidence table.
 
 ## Notes
 
-- A trade's rate is chosen by the server at execution time and returned in
+ A trade's rate is chosen by the server at execution time and returned in
   the response, so a stale displayed rate cannot change the executed price
   without the user seeing the final value.
-- Open decision for the report: maximum age of a stored rate that still
+ Open decision for the report: maximum age of a stored rate that still
   allows trading (proposal: the latest NBP business-day rate).
