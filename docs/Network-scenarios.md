@@ -5,9 +5,9 @@
 | Type | Operations | Offline | Retry | Confirmation |
 |---|---|---|---|---|
 | Read | View rates, rate history, wallet, transaction history | Allowed from local cache, with freshness label | Safe, max 3 attempts (1 s, 2 s, 4 s) | Not needed; data shown with its timestamp |
-| Action | Register, add simulated funds, buy, sell | **Blocked** (decision: no offline queue) | Only with the same `Idempotency-Key`, max 3 attempts | Server response required; success is never shown without it |
+| Action | Register, add simulated funds, buy, sell | Blocked (decision: no offline queue) | Only with the same `Idempotency-Key`, max 3 attempts | Server response required; success is never shown without it |
 
-Decision: offline changes are **blocked**, not queued. Reason: a queued trade
+Decision: offline changes are blocked, not queued. Reason: a queued trade
 would run later at a rate the user never saw, and it needs more consistency
 logic than this project justifies. Queuing is listed as a possible extension.
 
