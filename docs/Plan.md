@@ -20,18 +20,18 @@ documentation, demonstration.
 
 ## Possible extensions
 
-- Queue offline trade intentions (explicit intent, executed only after server confirmation and user re-confirmation at the current rate)
-- Push notifications for rate alerts
-- More currencies and rate charts
-- Background synchronisation
-- Biometric login
-- Administrator view for monitoring failed or uncertain requests
+ Queue offline trade intentions (explicit intent, executed only after server confirmation and user re-confirmation at the current rate)
+ Push notifications for rate alerts
+ More currencies and rate charts
+ Background synchronisation
+ Biometric login
+ Administrator view for monitoring failed or uncertain requests
 
 ## Sources
 
-- National Bank of Poland, NBP Web API documentation (api.nbp.pl)
-- IETF RFC 9110, HTTP Semantics (idempotent methods, status codes)
-- IETF RFC 7519, JSON Web Token
-- IETF draft, The Idempotency-Key HTTP Header Field (httpapi working group)
-- Documentation of the chosen tools: React Native and Expo, Node.js and Express, SQLite
-- Course materials: Laboratory project handbook and Project_Documentation_Template_EN.docx
+ National Bank of Poland, NBP Web API documentation (api.nbp.pl)
+ IETF RFC 9110, HTTP Semantics (idempotent methods, status codes)
+ IETF RFC 7519, JSON Web Token
+ IETF draft, The Idempotency-Key HTTP Header Field (httpapi working group)
+ Documentation of the chosen tools: React Native and Expo, Node.js and Express, SQLite
+ Course materials: Laboratory project handbook and Project_Documentation_Template_EN.docx
